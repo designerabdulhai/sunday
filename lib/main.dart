@@ -8,50 +8,79 @@ class Rubel extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: HomeScrean(),
+      home: HomeScreen(),
     );
   }
 }
 
-class HomeScrean extends StatelessWidget {
+class HomeScreen extends StatelessWidget {
+  TextEditingController InterTextEditingControlller = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-      child: Scaffold(
-        body: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              ElevatedButton(
-                onPressed: () {},
-                child: Text('Tap Here'),
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.red,
+        child: Scaffold(
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            TextField(
+              controller: InterTextEditingControlller,
+              keyboardType: TextInputType.emailAddress,
+              textInputAction: TextInputAction.next,
+              decoration: InputDecoration(
+                hintText: 'Enter Your Email',
+                labelText: 'Email',
+                border: OutlineInputBorder(
+                    borderSide: BorderSide(
+                  color: Colors.red,
+                  width: 2,
+                )
+                ),
+                enabledBorder: OutlineInputBorder(
+                    borderSide: BorderSide(
+                      color: Colors.black26,
+                      width: 2,
+                    )
+                ),
+                focusedBorder: OutlineInputBorder(
+                    borderSide: BorderSide(
+                      color: Colors.indigo,
+                      width: 2,
+                    )
                 ),
               ),
-              TextButton(
-                onPressed: () {},
-                child: Text('Text Button'),
-                onLongPress: (){
-                  showAboutDialog(context: context);
-                },
-                style: TextButton.styleFrom(
-                  backgroundColor: Colors.amber,
-                  foregroundColor: Colors.black,
+            ),TextField(
+              controller: InterTextEditingControlller,
+              keyboardType: TextInputType.phone,
+              textInputAction: TextInputAction.done,
+              obscureText: true,
+              decoration: InputDecoration(
+                hintText: 'Enter Your Password',
+                labelText: 'Password',
+                border: OutlineInputBorder(
+                    borderSide: BorderSide(
+                  color: Colors.red,
+                  width: 2,
+                )
                 ),
-              )
-            ],
-          ),
-        ),
-        floatingActionButtonAnimator: FloatingActionButtonAnimator.scaling,
-        floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
-        floatingActionButton: FloatingActionButton(
-          onPressed: () {},
-          child: Icon(Icons.add_a_photo),
-
+                enabledBorder: OutlineInputBorder(
+                    borderSide: BorderSide(
+                      color: Colors.black26,
+                      width: 2,
+                    )
+                ),
+                focusedBorder: OutlineInputBorder(
+                    borderSide: BorderSide(
+                      color: Colors.indigo,
+                      width: 2,
+                    )
+                ),
+              ),
+            ),
+            ElevatedButton(onPressed: (){}, child: Text('Login'))
+          ],
         ),
       ),
-    );
+    ));
   }
 }
