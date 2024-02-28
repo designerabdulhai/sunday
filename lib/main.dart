@@ -1,13 +1,14 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:flutter/material.dart';
 
-void main() {
+void main(){
   runApp(Rubel());
 }
 
 class Rubel extends StatelessWidget {
-
   @override
-  Widget build(BuildContext context) {
+  Widget build (BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: HomeScrean(),
@@ -16,58 +17,18 @@ class Rubel extends StatelessWidget {
 }
 
 class HomeScrean extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
+  @override 
+  Widget build (BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          leading: Icon(Icons.home),
-          title: Text('To Do App'),
-          backgroundColor: Colors.indigo,
+      appBar: AppBar(
+        title: Text('test app'),
+        leading: Icon(Icons.search),
 
+      ),
+      body: Center(child: Column(children: [
+        ElevatedButton(onPressed: (){}, child: Text('Tap Here'),
         ),
-        body: Center(child: Column
-        (
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            ElevatedButton(onPressed: () {
-              showDialog
-                (context: context,
-                  builder: (BuildContext context) {
-                    return AlertDialog(
-                      title: Text('Message'),
-                      content: Text('This is a message content'),
-                      actions: [
-                        TextButton(onPressed: () {},
-                          child: Text('Cancel'),
-                          style: TextButton.styleFrom(
-                            backgroundColor: Colors.teal,
-                            foregroundColor: Colors.white,
-                          )
-                        )
-                      ],
-                    );
-                  }
-              );
-              
-            }, child: Text('Click Here'),
-                style: ElevatedButton.styleFrom(
-            backgroundColor: Colors.indigo,
-                  foregroundColor: Colors.amberAccent,
-                  padding: EdgeInsets.symmetric(vertical: 10, horizontal: 30),
-                  shadowColor: Colors.black
-        )
-            ),
-
-            IconButton(onPressed: (){}, icon: Icon(Icons.add_a_photo),)
-          ],
-        ), ),
-        floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
-        floatingActionButtonAnimator: FloatingActionButtonAnimator.scaling,
-        floatingActionButton: FloatingActionButton (onPressed: ()
-    {
-      showAboutDialog(context: context);
-    },child: Icon(Icons.search),)
-
+      ]),),
     );
   }
 }
