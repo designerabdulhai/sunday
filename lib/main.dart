@@ -1,8 +1,6 @@
-// ignore_for_file: prefer_const_constructors
-
 import 'package:flutter/material.dart';
 
-void main(){
+void main() {
   runApp(Rubel());
 }
 
@@ -16,19 +14,29 @@ class Rubel extends StatelessWidget {
   }
 }
 
-class HomeScrean extends StatelessWidget {
-  @override 
+class HomeScrean extends StatelessWidget{
+  @override
   Widget build (BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('test app'),
-        leading: Icon(Icons.search),
-
+        title: Text('Test App'),
+        leading: Icon(Icons.settings),
+        backgroundColor: Colors.indigo,
+        foregroundColor: Colors.white,
       ),
-      body: Center(child: Column(children: [
-        ElevatedButton(onPressed: (){}, child: Text('Tap Here'),
-        ),
-      ]),),
+      body:Center (child:
+
+        Column
+          (
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+        ElevatedButton(onPressed: () {
+
+        },
+            child: Text('Tap Here')),
+            TextButton(onPressed: (){}, child: Text('Text Button'))
+        ],)
+        ,),
     );
   }
 }
