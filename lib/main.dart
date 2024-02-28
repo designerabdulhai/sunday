@@ -54,7 +54,7 @@ class HomeScrean extends StatelessWidget {
             backgroundColor: Colors.indigo,
                   foregroundColor: Colors.amberAccent,
                   padding: EdgeInsets.symmetric(vertical: 10, horizontal: 30),
-                  shadowColor: Colors.black
+                  shadowColor: Colors.black87
         )
             ),
 
