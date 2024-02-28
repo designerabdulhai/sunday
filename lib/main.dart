@@ -6,7 +6,7 @@ void main() {
 
 class Rubel extends StatelessWidget {
   @override
-  Widget build (BuildContext context) {
+  Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: HomeScrean(),
@@ -14,29 +14,44 @@ class Rubel extends StatelessWidget {
   }
 }
 
-class HomeScrean extends StatelessWidget{
+class HomeScrean extends StatelessWidget {
   @override
-  Widget build (BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Test App'),
-        leading: Icon(Icons.settings),
-        backgroundColor: Colors.indigo,
-        foregroundColor: Colors.white,
+  Widget build(BuildContext context) {
+    return SafeArea(
+      child: Scaffold(
+        body: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              ElevatedButton(
+                onPressed: () {},
+                child: Text('Tap Here'),
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.red,
+                ),
+              ),
+              TextButton(
+                onPressed: () {},
+                child: Text('Text Button'),
+                onLongPress: (){
+                  showAboutDialog(context: context);
+                },
+                style: TextButton.styleFrom(
+                  backgroundColor: Colors.amber,
+                  foregroundColor: Colors.black,
+                ),
+              )
+            ],
+          ),
+        ),
+        floatingActionButtonAnimator: FloatingActionButtonAnimator.scaling,
+        floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
+        floatingActionButton: FloatingActionButton(
+          onPressed: () {},
+          child: Icon(Icons.add_a_photo),
+
+        ),
       ),
-      body:Center (child:
-
-        Column
-          (
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-        ElevatedButton(onPressed: () {
-
-        },
-            child: Text('Tap Here')),
-            TextButton(onPressed: (){}, child: Text('Text Button'))
-        ],)
-        ,),
     );
   }
 }
