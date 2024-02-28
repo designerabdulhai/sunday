@@ -49,7 +49,7 @@ class HomeScrean extends StatelessWidget {
                   }
               );
               
-            }, child: Text('Tap'),
+            }, child: Text('Click Here'),
                 style: ElevatedButton.styleFrom(
             backgroundColor: Colors.indigo,
                   foregroundColor: Colors.amberAccent,
