@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+// import 'HomeSreen.dart';
 void main() {
   runApp(Rubel());
 }
@@ -8,79 +9,69 @@ class Rubel extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: HomeScreen(),
+      debugShowCheckedModeBanner: false,
+      home: HomeSreen(),
     );
   }
 }
 
-class HomeScreen extends StatelessWidget {
-  TextEditingController InterTextEditingControlller = TextEditingController();
+class HomeSreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    // color: Colors.white,
     return SafeArea(
-        child: Scaffold(
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            TextField(
-              controller: InterTextEditingControlller,
-              keyboardType: TextInputType.emailAddress,
-              textInputAction: TextInputAction.next,
-              decoration: InputDecoration(
-                hintText: 'Enter Your Email',
-                labelText: 'Email',
-                border: OutlineInputBorder(
-                    borderSide: BorderSide(
+      child: Scaffold(
+        appBar: AppBar(
+          backgroundColor: Colors.teal,
+          leading: Icon(Icons.access_alarms_sharp),
+          title: Text('Container App'),
+        ),
+        body: InkWell(
+          onTap: () {
+            showDialog(
+                context: context,
+                builder: (BuildContext context) {
+                  return AlertDialog(
+                    title: Text('Pop Up Message'),
+                    content: Text(''
+                        'lorem10 text isom demo try '),
+                    actions: [
+                      TextButton(onPressed: () {}, child: Text('OK')),
+                      TextButton(onPressed: () {}, child: Text('Cancel'))
+                    ],
+                  );
+                }
+                );
+
+          },
+          splashColor: Colors.red,
+          // radius: 2,
+          highlightColor: Colors.indigo,
+          child: Container(
+            padding: EdgeInsets.all(10),
+            margin: EdgeInsets.only(top: 60, right: 10, left: 10),
+            height: 200,
+            width: 400,
+            decoration: BoxDecoration(
+                color: Colors.indigo,
+                boxShadow: [
+                  BoxShadow(
+                      color: Colors.black87,
+                      blurRadius: 20,
+                      offset: Offset(2, 2))
+                ],
+                borderRadius: BorderRadius.circular(10),
+                border: Border.all(
                   color: Colors.red,
-                  width: 2,
-                )
-                ),
-                enabledBorder: OutlineInputBorder(
-                    borderSide: BorderSide(
-                      color: Colors.black26,
-                      width: 2,
-                    )
-                ),
-                focusedBorder: OutlineInputBorder(
-                    borderSide: BorderSide(
-                      color: Colors.indigo,
-                      width: 2,
-                    )
-                ),
-              ),
-            ),TextField(
-              controller: InterTextEditingControlller,
-              keyboardType: TextInputType.phone,
-              textInputAction: TextInputAction.done,
-              obscureText: true,
-              decoration: InputDecoration(
-                hintText: 'Enter Your Password',
-                labelText: 'Password',
-                border: OutlineInputBorder(
-                    borderSide: BorderSide(
-                  color: Colors.red,
-                  width: 2,
-                )
-                ),
-                enabledBorder: OutlineInputBorder(
-                    borderSide: BorderSide(
-                      color: Colors.black26,
-                      width: 2,
-                    )
-                ),
-                focusedBorder: OutlineInputBorder(
-                    borderSide: BorderSide(
-                      color: Colors.indigo,
-                      width: 2,
-                    )
-                ),
-              ),
+                  width: 5,
+                )),
+            child: Image.asset(
+              'assets/images/bari.jpg',
+              fit: BoxFit.fitWidth,
             ),
-            ElevatedButton(onPressed: (){}, child: Text('Login'))
-          ],
+          ),
         ),
       ),
-    ));
+    );
   }
 }
